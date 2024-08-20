@@ -35,4 +35,8 @@ public class User {
     @OneToMany
     @JoinColumn(name="user_id")
     private List<Order> orders;
+
+    @OneToMany
+    @JoinColumn(name="user_id")
+    private List<Cart> carts;
 }

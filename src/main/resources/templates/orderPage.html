@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home</title>
+    <title>Order</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="center flex">
-    <h1 class="w-full">Home page</h1>
+    <h1 class="w-full">Order page</h1>
     <a href="/order" class="btn btn-black flex align-center mr-20">Order</a>
     <a href="/cart" class="btn btn-black flex align-center mr-20">Cart</a>
     <form th:action="@{/logout}" method="post" class="justify-end flex mr-20">
@@ -21,18 +21,27 @@
         <a th:href="@{/catalog/{id}(id=${catalog.id})}" class="btn btn-black p-10-20" th:text="${catalog.name}"></a>
     </div>
 </div>
-<div class="ml-50">
-    <div class="flex flex-wrap center">
-        <div th:each="product : ${products}" class="m-20-10">
-            <img th:src="${product.picture}" alt="Image" width="200"/>
-            <div th:text="${product.name}"></div>
-            <div th:text="'Price: ' + ${#numbers.formatCurrency(product.price).replace('.',',')}" class="my-10"></div>
-            <form th:action="@{/cart/add/{id}(id=${product.id})}" method="post" class="">
-                <button type="submit" class="btn btn-add">Add to card</button>
-            </form>
-        </div>
-    </div>
+<div class="flex w-full mt-20 justify-between">
+    <div class="ml-50">Your order: </div>
 </div>
+<table class="w-full mt-20">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Detail</th>
+        <th>Total amount</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td class="cell" th:text="${order.id}"></td>
+        <td class="cell"></td> <!--  TODOOOO  -->
+        <td class="cell" th:text="${order.total_amount}"></td>
+        <td class="cell" th:text="${order.total_qty}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>

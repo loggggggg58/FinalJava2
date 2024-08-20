@@ -3,6 +3,8 @@ package com.samsung.finaljava2.repository.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 @Getter
@@ -22,4 +24,8 @@ public class Product {
     private String picture;
 
     private Long price;
+
+    @OneToMany
+    @JoinColumn(name="product_id")
+    private List<Cart> carts;
 }

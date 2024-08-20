@@ -4,19 +4,18 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "order_details")
+@Table(name = "carts")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderDetail {
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long order_id;
+    private Long quantity;
+    private Long user_id;
     private Long product_id;
-    private Long unit_price;
-    private Integer qty;
 }
