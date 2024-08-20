@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center gray">
+    <h1>Let Login!</h1>
+</div>
+<div class="center justify-center flex">
+    <form th:action="@{/login}" method="post" class="form">
+        <div class="flex justify-between my-10">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="flex justify-between my-10">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="my-10">
+            <button type="submit" class="btn btn-black">Login</button>
+        </div>
+
+        <div>If you don't have account. Click <a href="/register">here</a> to create.</div>
+    </form>
+</div>
+</body>
+</html>

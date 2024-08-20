@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register User</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center gray">
+    <h1>Let Register!</h1>
+</div>
+<div class="center justify-center flex">
+    <form th:action="@{/auth/register}" method="post" class="form">
+        <div class="flex justify-between my-10">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="flex justify-between my-10">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="flex justify-between my-10">
+            <label for="fullName">FullName:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="flex justify-between my-10">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="my-10">
+            <button type="submit" class="btn btn-black">Register</button>
+        </div>
+
+        <div>If you have an account. Click <a href="/login">here</a> to login.</div>
+    </form>
+</div>
+</body>
+</html>

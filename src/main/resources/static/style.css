@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.gray {
+    color: gray;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.cell {
+    text-align: center;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
+
+.btn-add {
+    background: lightgreen;
+}
+
+.btn-edit {
+    background: cornflowerblue;
+}
+
+.btn-delete {
+    background: coral;
+    margin-left: 20px;
+}
+
+.btn-black {
+    background: black;
+    color: white;
+    padding: 2px 10px;
+}
+
+.form {
+    width: 22%;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.my-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ml-50 {
+    margin-left: 50px;
+}
+
+.mr-120 {
+    margin-right: 120px;
+}
+
+.mr-20 {
+    margin-right: 20px;
+}
+
+.m-20-10 {
+    margin: 20px 10px;
+}
+
+.p-10-20 {
+    padding: 10px 20px;
+}

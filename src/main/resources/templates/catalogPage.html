@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center flex">
+    <h1 class="w-full">Home page</h1>
+    <a href="/cart" class="btn btn-black flex align-center mr-20">Cart</a>
+    <form th:action="@{/logout}" method="post" class="justify-end flex mr-20">
+        <button type="submit" class="btn btn-black">Logout</button>
+    </form>
+</div>
+<div class="flex w-full">
+    <div class="">
+        <a href="/catalog" class="btn btn-black p-10-20">All</a>
+    </div>
+    <div th:each="catalog : ${catalogs}" class="">
+        <a th:href="@{/catalog/{id}(id=${catalog.id})}" class="btn btn-black p-10-20" th:text="${catalog.name}"></a>
+    </div>
+</div>
+<div class="ml-50">
+    <div class="flex flex-wrap center">
+        <div th:each="product : ${products}" class="m-20-10">
+            <img th:src="${product.picture}" alt="Image" width="200"/>
+            <div th:text="${product.name}"></div>
+            <div th:text="${#numbers.formatCurrency(product.price).replace('.',',')}" class="my-10"></div>
+            <a href="/" class="btn btn-black">Add to card</a>
+        </div>
+    </div>
+</div>
+<!--<a th:href="@{/user/edit/{id}(id=${user.id})}" class="btn btn-edit">Add to card</a>-->
+
+</body>
+</html>

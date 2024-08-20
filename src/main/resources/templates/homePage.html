@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center">
+    <h1>Home page</h1>
+    <form th:action="@{/logout}" method="post" class="justify-end flex">
+        <div class="my-10">
+            <button type="submit" class="btn btn-black">Logout</button>
+        </div>
+    </form>
+</div>
+<!--<div class="flex">-->
+<!--    <div th:each="product : ${products}">-->
+<!--        <img th:src="${product.thumbnail}" alt="Image" width="200"/>-->
+<!--        <div th:text="${product.name}"></div>-->
+<!--        <div th:text="${#numbers.formatCurrency(product.price).replace('.',',')}" class="my-10"></div>-->
+<!--        <a href="/" class="btn btn-edit">Add to card</a>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<a th:href="@{/user/edit/{id}(id=${user.id})}" class="btn btn-edit">Add to card</a>-->
+
+</body>
+</html>
